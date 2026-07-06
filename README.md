@@ -36,15 +36,6 @@ TasteBoard employs a highly modular, multi-agent architecture controlled by a **
 8. **Visualization Agent**: Leverages Plotly to dynamically generate data charts (Rating Bars, Volume Bars, Radar Charts).
 9. **Report Agent**: Synthesizes the pipeline data and charts into a 12-section Markdown report.
 
-## Kaggle Judging Criteria
-
-TasteBoard is explicitly designed to satisfy the primary contest rubrics:
-
-- **Agentic Workflow**: The system is fully autonomous. A user submits a single natural-language string, and the system dynamically routes tasks across 8 specialized agents, transforming raw ideas into structured data, and structured data into a final report.
-- **Tool Use (MCP)**: All tool logic is completely decoupled from agent logic via the Model Context Protocol (`mcp_server/server.py`). The FastMCP server handles everything from web searches to Plotly chart rendering.
-- **Architecture (Modularity)**: The project uses strict tool scoping. Sub-agents do not establish their own network connections or have unchecked tool access. The Coordinator enforces a permission map (`ALLOWED_TOOLS`), guaranteeing that agents only use tools relevant to their isolated task.
-- **Business Usefulness**: The final output is highly actionable. Rather than a generic ChatGPT response, founders receive a data-backed 12-section feasibility report with cited evidence, competitor benchmarking, and visual gap analysis.
-
 ---
 
 ## Folder Layout
